@@ -1,0 +1,46 @@
+$font: sans-serif,
+helvetica,
+arial,
+helvetica;
+$color-background: #ccc;
+$color-letra: #41ce80;
+body {
+    background-color: $color-background;
+}
+
+h1 {
+    color: $color-letra;
+    font-family: $font;
+}
+
+@mixin crearBordes ($ancho, $color) {
+    border: $ancho solid $color;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 1px black;
+    width: 500px;
+    margin: 0px auto;
+}
+
+.caja {
+    @include crearBordes(1px, red);
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    h1 {
+        color: blue;
+    }
+    p {
+        color: green;
+    }
+    .info {
+        font-size: 10px;
+        .autor {
+            font-size: 15px;
+            color: orange;
+        }
+    }
+}
+
+.listado {
+    @include crearBordes(3px, blue);
+}
